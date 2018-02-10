@@ -39,6 +39,11 @@
          else el.style.display = "block";
 		return false;
 	  }
+	  document.onkeydown=function(){
+			if(window.event.keyCode=='13'){
+				getStory();
+			}
+		}
     </script>
     <style>
     body{
@@ -122,6 +127,9 @@
       color:green;
       margin-left:20px;
     }
+	p{
+	text-align: justify;
+	}
 	p.note{
       border-radius:10px;
 	  padding:10px;
@@ -152,7 +160,6 @@
       <input type="number" id="number" name="number" placeholder="№ истории"><input type="button" value="Готово" onClick="getStory();">
       <input type="button" onClick="document.getElementById('number').value=parseInt(document.getElementById('number').value)+1; getStory();" value=">" style="width:10%;">
 	  <input type="button" onClick="return showRuleBook();" value="?" style="width:10%;">
-    </div>
     <div id="content">
 	  <iframe id="rulebook" src="./rulebook.pdf"></iframe>
       <div class="story">
